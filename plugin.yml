@@ -1,0 +1,14 @@
+name: Grade
+version: '${project.version}'
+main: ro.grade.GradePlugin
+api-version: '1.21'
+description: Grade (ranks) configurabile
+commands:
+  grade:
+    description: Gestionare grade
+    usage: /grade <list|set|remove|info|reload>
+    aliases: [rank, grad]
+permissions:
+  grade.admin:
+    description: Acces la toate comenzile /grade
+    default: op

@@ -1,0 +1,33 @@
+# Gradul primit de jucatorii care nu au unul setat
+default-rank: membru
+
+# Format chat. Placeholdere: {prefix} {player} {message}
+chat-format: "{prefix}{player}&7: &f{message}"
+
+# Culorile folosesc codul & (ex: &c = rosu, &l = bold)
+# weight = prioritate (mai mare = mai sus)
+# inherits = mosteneste permisiunile altor grade
+# permissions = permisiuni; "-permisiune" o interzice explicit
+ranks:
+  membru:
+    prefix: "&7[Membru] "
+    weight: 1
+    permissions: []
+  vip:
+    prefix: "&a[VIP] "
+    weight: 10
+    inherits: [membru]
+    permissions:
+      - essentials.fly
+  moderator:
+    prefix: "&9[Mod] "
+    weight: 50
+    inherits: [vip]
+    permissions:
+      - minecraft.command.kick
+  admin:
+    prefix: "&c[Admin] "
+    weight: 100
+    inherits: [moderator]
+    permissions:
+      - "*"
