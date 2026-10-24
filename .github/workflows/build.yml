@@ -16,6 +16,7 @@ jobs:
           java-version: '21'
           cache: maven
       - run: mvn -B package
+      - run: unzip -l target/Grade-1.0.0.jar
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
